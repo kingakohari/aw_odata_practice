@@ -74,7 +74,6 @@
           "dataSource": "Northwind.svc",
           "preload": true
         }
-      }
     },
     "resources": {
       "css": [
@@ -118,5 +117,5 @@
       "async": true,
       "id": "App"
     }
-  
+  }
 }
