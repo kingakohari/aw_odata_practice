@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "name": "Start odata_practice",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npx",
+            "cwd": "${workspaceFolder}/odata_practice",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandbox.html#odatapractice-display"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "DEBUG": "--inspect",
+                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+            }
+        },
+        {
+            "name": "Start odata_practice Local",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/odata_practice",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--config",
+                "./ui5-local.yaml",
+                "--open",
+                "test/flpSandbox.html#odatapractice-display"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std",
+            "port": 9229,
+            "env": {
+                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+            }
+        }
+    ],
+    "compounds": []
+}
