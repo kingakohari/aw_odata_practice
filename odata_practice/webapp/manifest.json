@@ -1,6 +1,7 @@
 {
   "_version": "1.49.0",
   "sap.app": {
+    
     "id": "odatapractice",
     "type": "application",
     "i18n": "i18n/i18n.properties",
@@ -14,7 +15,17 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.9.2",
       "toolsId": "c3b3b8fd-c7fe-4563-8646-88526bcdb08e"
+    },
+    "dataSources": {
+      "Northwind.svc": {
+        "uri": "/Northwind/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/metadata.xml"
+          }
+        }
     }
+    
   },
   "sap.ui": {
     "technology": "UI5",
@@ -53,9 +64,15 @@
     },
     "models": {
       "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
+        "type": "sap.ui.model.odata.v2.ODataModel",
         "settings": {
-          "bundleName": "odatapractice.i18n.i18n"
+          "bundleName": "odatapractice.i18n.i18n",
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+          },
+          "dataSource": "Northwind.svc",
+          "preload": true
         }
       }
     },
@@ -78,7 +95,7 @@
       },
       "routes": [
         {
-          "name": "RouteView1",
+          "name": "RouteProducts",
           "pattern": ":?query:",
           "target": [
             "TargetView1"
@@ -90,8 +107,8 @@
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "View1",
-          "viewName": "View1"
+          "viewId": "Products",
+          "viewName": "Products"
         }
       }
     },
@@ -101,5 +118,5 @@
       "async": true,
       "id": "App"
     }
-  }
+  
 }
